@@ -18,3 +18,10 @@ scoreboard objectives add Level dummy
 scoreboard objectives add armor_chance dummy
 
 scoreboard objectives add trim_chance dummy
+
+# Modulo timer for low-frequency tick work (e.g. villager trade strip every 10t)
+scoreboard objectives add tick_mod dummy
+scoreboard players set #global tick_mod 0
+
+# Temp counts for shulker/enderman ratio checks
+scoreboard objectives add spawn_count dummy

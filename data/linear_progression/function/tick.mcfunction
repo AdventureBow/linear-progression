@@ -47,3 +47,8 @@ execute as @a[advancements={minecraft:end/kill_dragon=true},tag=!master] if scor
 # Apply boost function to mobs based on current difficulty_level
 execute if score #global difficulty_level matches 1 as @e[type=!player,tag=!boosted] if predicate linear_progression:wear_armor if predicate linear_progression:armored_mobs run function linear_progression:difficulty_boost/hard_mode
 execute if score #global difficulty_level matches 2 as @e[type=!player,tag=!boosted] if predicate linear_progression:wear_armor if predicate linear_progression:armored_mobs run function linear_progression:difficulty_boost/master_mode
+
+# Every 10 ticks: low-frequency tasks (villager trade strip, shulker conversion)
+scoreboard players add #global tick_mod 1
+execute if score #global tick_mod matches 10.. run function linear_progression:slow_tick
+execute if score #global tick_mod matches 10.. run scoreboard players set #global tick_mod 0

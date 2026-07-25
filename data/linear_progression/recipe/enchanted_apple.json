@@ -1,0 +1,54 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "LBL",
+    "BAB",
+    "LBL"
+  ],
+  "key": {
+    "L": "minecraft:lapis_lazuli",
+    "B": "minecraft:experience_bottle",
+    "A": "minecraft:apple"
+  },
+  "result": {
+    "id": "minecraft:apple",
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_name": "Enchanted Apple",
+      "minecraft:rarity": "epic",
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation": 4.0
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:regeneration",
+                "amplifier": 1,
+                "duration": 100
+              },
+              {
+                "id": "minecraft:resistance",
+                "amplifier": 0,
+                "duration": 100
+              },
+              {
+                "id": "minecraft:fire_resistance",
+                "amplifier": 0,
+                "duration": 100
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
