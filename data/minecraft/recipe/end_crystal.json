@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["ggg", "geg", "ghg"],
+  "key": {
+    "g": "minecraft:glass",
+    "e": "minecraft:ender_pearl",
+    "h": "minecraft:ghast_tear"
+  },
+  "result": {
+    "id": "minecraft:end_crystal"
+  }
+}

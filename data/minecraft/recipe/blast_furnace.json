@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["ccc", "cfc", "vvv"],
+  "key": {
+    "c": "minecraft:copper_ingot",
+    "v": "minecraft:stone",
+    "f": "minecraft:furnace"
+  },
+  "result": {
+    "id": "minecraft:blast_furnace"
+  }
+}

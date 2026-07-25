@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:copper_hoe",
+  "addition": "minecraft:iron_block",
+  "template": "minecraft:leather",
+  "result": {
+    "id": "minecraft:iron_hoe",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

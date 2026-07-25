@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:copper_pickaxe",
+  "addition": "minecraft:iron_block",
+  "template": "minecraft:leather",
+  "result": {
+    "id": "minecraft:iron_pickaxe",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

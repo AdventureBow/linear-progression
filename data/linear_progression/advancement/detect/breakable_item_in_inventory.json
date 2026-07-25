@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "breakable_item_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:damage": {
+                "damage": {}
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "linear_progression:handlers/handle_breakable_item_in_inventory"
+  }
+}

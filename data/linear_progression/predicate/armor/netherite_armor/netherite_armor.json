@@ -1,0 +1,54 @@
+[
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "head": {
+              "items": "minecraft:netherite_helmet",
+              "predicates": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "chest": {
+              "items": "minecraft:netherite_chestplate"
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "head": {
+              "items": "minecraft:netherite_leggings",
+              "predicates": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "head": {
+              "items": "minecraft:netherite_boots",
+              "predicates": {}
+            }
+          }
+        }
+      }
+    ]
+  }
+]

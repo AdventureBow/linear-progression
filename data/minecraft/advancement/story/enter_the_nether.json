@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:campfire"
+    },
+    "title": "Crank Up the Heat",
+    "description": "You entered the Nether. Maybe you shouldn't have come here?",
+    "frame": "task"
+  },
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "from": "minecraft:overworld",
+        "to": "minecraft:the_nether"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 30
+  }
+}

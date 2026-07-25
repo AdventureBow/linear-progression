@@ -1,0 +1,19 @@
+{
+  "function": "set_components",
+  "components": {
+    "minecraft:tool": {
+      "default_mining_speed": 1,
+      "rules": [
+        {
+          "blocks": "minecraft:cobweb",
+          "correct_for_drops": true,
+          "speed": 150
+        },
+        {
+          "blocks": "#minecraft:sword_efficient",
+          "speed": 10
+        }
+      ]
+    }
+  }
+}

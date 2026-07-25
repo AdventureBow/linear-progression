@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:copper_leggings",
+  "addition": "minecraft:iron_block",
+  "template": "minecraft:leather",
+  "result": {
+    "id": "minecraft:iron_leggings",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

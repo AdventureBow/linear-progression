@@ -1,0 +1,22 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": [
+      "minecraft:zombie",
+      "minecraft:skeleton",
+      "minecraft:bogged",
+      "minecraft:stray",
+      "minecraft:piglin",
+      "minecraft:piglin_brute",
+      "minecraft:wither_skeleton",
+      "minecraft:stray",
+      "minecraft:drowned",
+      "minecraft:husk",
+      "minecraft:zombie_villager",
+      "minecraft:zombified_piglin",
+      "minecraft:parched",
+      "minecraft:player"
+    ]
+  }
+}

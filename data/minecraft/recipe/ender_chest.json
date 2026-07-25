@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["vvv", "vcv", "vvv"],
+  "key": {
+    "c": "minecraft:ender_pearl",
+    "v": "minecraft:obsidian"
+  },
+  "result": {
+    "id": "minecraft:ender_chest"
+  }
+}

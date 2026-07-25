@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [" f ", " t ", " s "],
+  "key": {
+    "s": "minecraft:stick",
+    "t": "#linear_progression:stone_tools",
+    "f": "minecraft:flint"
+  },
+  "result": {
+    "id": "minecraft:stone_sword",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

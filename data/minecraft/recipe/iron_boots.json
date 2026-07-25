@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": "minecraft:copper_boots",
+  "addition": "minecraft:iron_block",
+  "template": "minecraft:leather",
+  "result": {
+    "id": "minecraft:iron_boots",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "function": "set_components",
+  "components": {
+    "minecraft:tool": {
+      "default_mining_speed": 1,
+      "rules": [
+        {
+          "blocks": "#minecraft:incorrect_for_gold_tool",
+          "correct_for_drops": false
+        },
+        {
+          "id": "golden_shovel",
+          "blocks": "#minecraft:mineable/shovel",
+          "correct_for_drops": true,
+          "speed": 20
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["wth", "bec", " p "],
+  "key": {
+    "w": "minecraft:wind_charge",
+    "t": "minecraft:totem_of_undying",
+    "b": "minecraft:blaze_powder",
+    "e": "minecraft:ender_pearl",
+    "c": "minecraft:echo_shard",
+    "p": "minecraft:prismarine_shard",
+    "h": "minecraft:phantom_membrane"
+  },
+  "result": {
+    "id": "minecraft:ender_eye",
+    "count": 1
+  }
+}

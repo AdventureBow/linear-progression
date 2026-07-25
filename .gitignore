@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Local project rules / agent docs (not tracked)
+agents.md
+Agents.md

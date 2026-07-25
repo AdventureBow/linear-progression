@@ -1,0 +1,22 @@
+{
+  "function": "minecraft:filtered",
+  "item_filter": {
+    "predicates": {
+      "minecraft:damage": {
+        "damage": {
+          "min": 0
+        }
+      }
+    }
+  },
+  "on_pass": {
+    "function": "minecraft:set_components",
+    "components": {
+      "!minecraft:damage": {},
+      "minecraft:unbreakable": {},
+      "minecraft:tooltip_display": {
+        "hidden_components": ["minecraft:unbreakable"]
+      }
+    }
+  }
+}

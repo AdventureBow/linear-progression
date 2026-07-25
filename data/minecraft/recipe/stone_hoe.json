@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["ft ", " s ", " s "],
+  "key": {
+    "s": "minecraft:stick",
+    "t": "#linear_progression:stone_tools",
+    "f": "minecraft:flint"
+  },
+  "result": {
+    "id": "minecraft:stone_hoe",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

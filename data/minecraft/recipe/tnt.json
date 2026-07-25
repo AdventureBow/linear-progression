@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" v ", "vcv", " v "],
+  "key": {
+    "c": "minecraft:gunpowder",
+    "v": ["minecraft:sand", "minecraft:red_sand"]
+  },
+  "result": {
+    "id": "minecraft:tnt"
+  }
+}

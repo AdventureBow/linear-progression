@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "ingredient": "minecraft:clay",
+  "result": {
+    "id": "minecraft:terracotta"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

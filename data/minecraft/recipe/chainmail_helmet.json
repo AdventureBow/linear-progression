@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["vvv", "v v", "   "],
+  "key": {
+    "v": "minecraft:iron_chain"
+  },
+  "result": {
+    "id": "minecraft:chainmail_helmet",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

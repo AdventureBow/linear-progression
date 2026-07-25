@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["bb ", " a ", " a "],
+  "key": {
+    "b": "minecraft:diamond",
+    "a": "minecraft:amethyst_shard"
+  },
+  "result": {
+    "id": "minecraft:diamond_hoe",
+    "components": {
+      "minecraft:unbreakable": {}
+    }
+  }
+}

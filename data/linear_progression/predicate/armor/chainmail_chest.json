@@ -1,0 +1,11 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "slots": {
+      "armor.chest": {
+        "items": "minecraft:chainmail_chestplate"
+      }
+    }
+  }
+}
