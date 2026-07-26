@@ -9,10 +9,6 @@ execute as @a if predicate linear_progression:durability_check/durability_chest 
 execute as @a if predicate linear_progression:durability_check/durability_legs unless predicate linear_progression:durability_check/retains_durability run item modify entity @s armor.legs linear_progression:make_unbreakable
 execute as @a if predicate linear_progression:durability_check/durability_feet unless predicate linear_progression:durability_check/retains_durability run item modify entity @s armor.feet linear_progression:make_unbreakable
 
-# Store each player's xp level and run health function if they have less than max health
-execute as @a store result score @s Level run data get entity @s XpLevel
-execute as @a[tag=!max_health] run function linear_progression:health_system/check_xp_health
-
 # Run golden armor effects if predicate returns true
 execute as @e[predicate=linear_progression:armored_mobs] at @s[tag=!gold_armor_head] if predicate linear_progression:armor/golden_armor/golden_head run function linear_progression:armor_effects/apply_golden_effects
 execute as @e[predicate=linear_progression:armored_mobs] at @s[tag=!gold_armor_chest] if predicate linear_progression:armor/golden_armor/golden_chest run function linear_progression:armor_effects/apply_golden_effects

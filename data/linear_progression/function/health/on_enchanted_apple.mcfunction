@@ -1,0 +1,2 @@
+function linear_progression:health/gain_heart_eapple
+advancement revoke @s only linear_progression:health/eat_enchanted_apple

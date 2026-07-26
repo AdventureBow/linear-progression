@@ -1,0 +1,30 @@
+{
+  "parent": "linear_progression:story/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:skeleton_skull"
+    },
+    "title": "Nine Lives",
+    "description": "Dying costs a heart. Enchanted Apple restores up to 10 hearts. Enchanted Golden Apple jumps you to 11 if below 10, then up to 20.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "first_death": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "nbt": "{Health:0.0f}"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

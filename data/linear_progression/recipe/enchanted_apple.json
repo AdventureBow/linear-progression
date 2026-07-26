@@ -2,13 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "LBL",
-    "BAB",
-    "LBL"
+    "LLL",
+    "LAL",
+    "LLL"
   ],
   "key": {
     "L": "minecraft:lapis_lazuli",
-    "B": "minecraft:experience_bottle",
     "A": "minecraft:apple"
   },
   "result": {
@@ -19,7 +18,8 @@
       "minecraft:rarity": "epic",
       "minecraft:food": {
         "nutrition": 4,
-        "saturation": 4.0
+        "saturation": 4.0,
+        "can_always_eat": true
       },
       "minecraft:consumable": {
         "consume_seconds": 1.6,
@@ -48,6 +48,11 @@
             ]
           }
         ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "enchanted_apple": 1
+        }
       }
     }
   }

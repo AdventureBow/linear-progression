@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "eat_enchanted_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:apple",
+          "predicates": {
+            "minecraft:custom_data": {
+              "linear_progression": {
+                "enchanted_apple": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "linear_progression:health/on_enchanted_apple"
+  }
+}

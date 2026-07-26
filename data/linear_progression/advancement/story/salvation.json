@@ -1,0 +1,26 @@
+{
+  "parent": "linear_progression:story/nine_lives",
+  "display": {
+    "icon": {
+      "id": "minecraft:enchanted_golden_apple"
+    },
+    "title": "Salvation",
+    "description": "An Enchanted Golden Apple goes beyond 10 hearts — jump to 11 if you're below, then climb as high as 20.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_enchanted_golden_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:enchanted_golden_apple"
+          }
+        ]
+      }
+    }
+  }
+}

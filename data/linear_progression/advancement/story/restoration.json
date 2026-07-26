@@ -1,0 +1,36 @@
+{
+  "parent": "linear_progression:story/nine_lives",
+  "display": {
+    "icon": {
+      "id": "minecraft:apple",
+      "components": {
+        "minecraft:enchantment_glint_override": true
+      }
+    },
+    "title": "Restoration",
+    "description": "The Enchanted Apple restores lost hearts, up to 10. Craft it with 8 Lapis Lazuli surrounding an Apple.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "craft_or_get_enchanted_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:apple",
+            "predicates": {
+              "minecraft:custom_data": {
+                "linear_progression": {
+                  "enchanted_apple": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
