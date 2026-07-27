@@ -1,15 +1,15 @@
 {
-  "parent": "linear_progression:story/nine_lives",
+  "parent": "linear_progression:story/lost_treasure",
   "display": {
     "icon": {
       "id": "minecraft:enchanted_golden_apple"
     },
-    "title": "Salvation",
-    "description": "An Enchanted Golden Apple goes beyond 10 hearts — jump to 11 if you're below, then climb as high as 20.",
-    "frame": "task",
+    "title": "Transcendent",
+    "description": "An Enchanted Golden Apple grants hearts up to 20.",
+    "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "criteria": {
     "get_enchanted_golden_apple": {

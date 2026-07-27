@@ -10,9 +10,22 @@
           "functions": [
             {
               "function": "minecraft:set_count",
-              "count": 4
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 5
+              }
             }
           ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple"
         }
       ]
     }

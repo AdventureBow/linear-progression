@@ -1,10 +1,10 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:compass"
+      "id": "minecraft:ender_eye"
     },
     "title": "Linear Progression",
-    "description": "A more engaging survival progression.",
+    "description": "Tools & Armor are Unbreakble Now!",
     "background": "minecraft:gui/advancements/backgrounds/adventure",
     "frame": "task",
     "show_toast": false,

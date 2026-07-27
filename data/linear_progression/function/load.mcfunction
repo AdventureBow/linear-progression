@@ -17,3 +17,7 @@ scoreboard objectives add spawn_count dummy
 
 # Heart system
 scoreboard objectives add base_hp dummy
+
+# Spawner breaks (Lost Treasure advancement)
+scoreboard objectives add spawner_mined minecraft.mined:minecraft.spawner
+
