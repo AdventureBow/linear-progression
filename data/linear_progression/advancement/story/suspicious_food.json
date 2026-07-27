@@ -1,0 +1,32 @@
+{
+  "parent": "linear_progression:story/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:beetroot"
+    },
+    "title": "Suspicious Food",
+    "description": "Craft Suspicious Food by combining food with a flower.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_suspicious_food": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:custom_data": {
+                "linear_progression": {
+                  "suspicious_food": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

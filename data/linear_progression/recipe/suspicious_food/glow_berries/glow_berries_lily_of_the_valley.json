@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "suspicious_glow_berries",
+  "ingredients": [
+    "minecraft:glow_berries",
+    "minecraft:lily_of_the_valley"
+  ],
+  "result": {
+    "id": "minecraft:glow_berries",
+    "count": 1,
+    "components": {
+      "minecraft:item_name": "Suspicious Glow Berries",
+      "minecraft:food": {
+        "nutrition": 2,
+        "saturation": 0.4,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:poison",
+                "amplifier": 0,
+                "duration": 660
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "suspicious_food": 1,
+          "food": "glow_berries",
+          "flower": "lily_of_the_valley"
+        }
+      }
+    }
+  }
+}

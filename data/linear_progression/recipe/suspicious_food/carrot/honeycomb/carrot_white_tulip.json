@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "suspicious_carrot_honeycomb",
+  "ingredients": [
+    "minecraft:carrot",
+    "minecraft:white_tulip",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "minecraft:carrot",
+    "count": 1,
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_name": "Strengthening Carrot",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 7.6,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:strength",
+                "amplifier": 0,
+                "duration": 360
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "suspicious_food": 2,
+          "food": "carrot",
+          "flower": "white_tulip",
+          "honeycomb": 1
+        }
+      },
+      "minecraft:potion_contents": {
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 0,
+            "duration": 360
+          }
+        ]
+      }
+    }
+  }
+}

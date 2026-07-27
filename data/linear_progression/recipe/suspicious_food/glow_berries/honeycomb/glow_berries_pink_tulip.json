@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "suspicious_glow_berries_honeycomb",
+  "ingredients": [
+    "minecraft:glow_berries",
+    "minecraft:pink_tulip",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "minecraft:glow_berries",
+    "count": 1,
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_name": "Strengthening Glow Berries",
+      "minecraft:food": {
+        "nutrition": 2,
+        "saturation": 4.4,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:strength",
+                "amplifier": 0,
+                "duration": 540
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "suspicious_food": 2,
+          "food": "glow_berries",
+          "flower": "pink_tulip",
+          "honeycomb": 1
+        }
+      },
+      "minecraft:potion_contents": {
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 0,
+            "duration": 540
+          }
+        ]
+      }
+    }
+  }
+}

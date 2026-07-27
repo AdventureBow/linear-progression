@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "suspicious_beef_honeycomb",
+  "ingredients": [
+    "minecraft:beef",
+    "minecraft:open_eyeblossom",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "minecraft:beef",
+    "count": 1,
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_name": "Night-Vision Beef",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 5.8,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:night_vision",
+                "amplifier": 0,
+                "duration": 220
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "suspicious_food": 2,
+          "food": "beef",
+          "flower": "open_eyeblossom",
+          "honeycomb": 1
+        }
+      },
+      "minecraft:potion_contents": {
+        "custom_effects": [
+          {
+            "id": "minecraft:night_vision",
+            "amplifier": 0,
+            "duration": 220
+          }
+        ]
+      }
+    }
+  }
+}

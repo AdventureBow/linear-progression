@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "suspicious_melon_slice_honeycomb",
+  "ingredients": [
+    "minecraft:melon_slice",
+    "minecraft:white_tulip",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "id": "minecraft:melon_slice",
+    "count": 1,
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:item_name": "Strengthening Melon Slice",
+      "minecraft:food": {
+        "nutrition": 2,
+        "saturation": 5.2,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:strength",
+                "amplifier": 0,
+                "duration": 540
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "suspicious_food": 2,
+          "food": "melon_slice",
+          "flower": "white_tulip",
+          "honeycomb": 1
+        }
+      },
+      "minecraft:potion_contents": {
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 0,
+            "duration": 540
+          }
+        ]
+      }
+    }
+  }
+}

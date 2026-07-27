@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "suspicious_rabbit",
+  "ingredients": [
+    "minecraft:rabbit",
+    "minecraft:poppy"
+  ],
+  "result": {
+    "id": "minecraft:rabbit",
+    "count": 1,
+    "components": {
+      "minecraft:item_name": "Suspicious Rabbit",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 1.8,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:night_vision",
+                "amplifier": 0,
+                "duration": 150
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:custom_data": {
+        "linear_progression": {
+          "suspicious_food": 1,
+          "food": "rabbit",
+          "flower": "poppy"
+        }
+      }
+    }
+  }
+}
