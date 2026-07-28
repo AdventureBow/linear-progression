@@ -1,15 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "pattern": ["bb ", "ba ", " a "],
+  "pattern": [
+    "bb ",
+    "ba ",
+    " a "
+  ],
   "key": {
     "b": "minecraft:diamond",
     "a": "minecraft:amethyst_shard"
   },
   "result": {
-    "id": "minecraft:diamond_axe",
-    "components": {
-      "minecraft:unbreakable": {}
-    }
+    "id": "minecraft:diamond_axe"
   }
 }

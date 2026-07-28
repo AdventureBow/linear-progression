@@ -8,8 +8,7 @@
         "predicate": {
           "equipment": {
             "head": {
-              "items": "minecraft:netherite_helmet",
-              "predicates": {}
+              "items": "minecraft:netherite_helmet"
             }
           }
         }
@@ -30,9 +29,8 @@
         "entity": "this",
         "predicate": {
           "equipment": {
-            "head": {
-              "items": "minecraft:netherite_leggings",
-              "predicates": {}
+            "legs": {
+              "items": "minecraft:netherite_leggings"
             }
           }
         }
@@ -42,9 +40,8 @@
         "entity": "this",
         "predicate": {
           "equipment": {
-            "head": {
-              "items": "minecraft:netherite_boots",
-              "predicates": {}
+            "feet": {
+              "items": "minecraft:netherite_boots"
             }
           }
         }

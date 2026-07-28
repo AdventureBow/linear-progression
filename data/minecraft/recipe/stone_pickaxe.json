@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "pattern": ["ftf", " s ", " s "],
+  "pattern": [
+    "ftf",
+    " s ",
+    " s "
+  ],
   "key": {
     "s": "minecraft:stick",
     "t": "#linear_progression:stone_tools",
     "f": "minecraft:flint"
   },
   "result": {
-    "id": "minecraft:stone_pickaxe",
-    "components": {
-      "minecraft:unbreakable": {}
-    }
+    "id": "minecraft:stone_pickaxe"
   }
 }

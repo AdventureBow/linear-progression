@@ -1,16 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "pattern": ["tt ", "fs ", " s "],
+  "pattern": [
+    "tt ",
+    "fs ",
+    " s "
+  ],
   "key": {
     "s": "minecraft:stick",
     "t": "#linear_progression:stone_tools",
     "f": "minecraft:flint"
   },
   "result": {
-    "id": "minecraft:stone_axe",
-    "components": {
-      "minecraft:unbreakable": {}
-    }
+    "id": "minecraft:stone_axe"
   }
 }

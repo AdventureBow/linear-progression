@@ -1,4 +1,6 @@
-# Enchanted Apple: +1 heart, hard cap at 20 HP (10 hearts).
+# Enchanted Apple: +1 heart, cap 10 hearts (20 HP).
+
+advancement revoke @s only linear_progression:health/eat_enchanted_apple
 
 execute if score @s base_hp matches 20.. run return fail
 scoreboard players add @s base_hp 2

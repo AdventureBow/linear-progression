@@ -1,13 +1,7 @@
 # Find untagged thrown eyes, schedule their replacement.
 execute as @e[type=eye_of_ender,tag=!unbreakable,limit=1] at @s run function linear_progression:unbreakable_eye/schedule_unbreakable_eye
 
-# Check using predicates if a player is holding/wearing an item with durability, if so, run item modifier make_unbreakable
-execute as @a if predicate linear_progression:durability_check/durability_mainhand unless predicate linear_progression:durability_check/retains_durability run item modify entity @s weapon.mainhand linear_progression:make_unbreakable
-execute as @a if predicate linear_progression:durability_check/durability_offhand unless predicate linear_progression:durability_check/retains_durability run item modify entity @s weapon.offhand linear_progression:make_unbreakable
-execute as @a if predicate linear_progression:durability_check/durability_head unless predicate linear_progression:durability_check/retains_durability run item modify entity @s armor.head linear_progression:make_unbreakable
-execute as @a if predicate linear_progression:durability_check/durability_chest unless predicate linear_progression:durability_check/retains_durability run item modify entity @s armor.chest linear_progression:make_unbreakable
-execute as @a if predicate linear_progression:durability_check/durability_legs unless predicate linear_progression:durability_check/retains_durability run item modify entity @s armor.legs linear_progression:make_unbreakable
-execute as @a if predicate linear_progression:durability_check/durability_feet unless predicate linear_progression:durability_check/retains_durability run item modify entity @s armor.feet linear_progression:make_unbreakable
+# Inventory systems (durability, etc.) run via detect/inventory_changed → global_systems.
 
 # Run golden armor effects if predicate returns true
 execute as @e[predicate=linear_progression:armored_mobs] at @s[tag=!gold_armor_head] if predicate linear_progression:armor/golden_armor/golden_head run function linear_progression:armor_effects/apply_golden_effects
@@ -21,12 +15,7 @@ execute as @e[predicate=linear_progression:armored_mobs] at @s[tag=gold_armor_fe
 
 execute as @e[predicate=linear_progression:armored_mobs] at @s if predicate linear_progression:armor/netherite_armor/netherite_armor run function linear_progression:armor_effects/apply_netherite_effects
 
-# Run tool effects if predicate returns true
-execute as @a at @s if predicate linear_progression:tool/golden_axe run function linear_progression:tool_effects
-execute as @a at @s if predicate linear_progression:tool/golden_hoe run function linear_progression:tool_effects
-execute as @a at @s if predicate linear_progression:tool/golden_shovel run function linear_progression:tool_effects
-execute as @a at @s if predicate linear_progression:tool/golden_pickaxe run function linear_progression:tool_effects
-execute as @a at @s if predicate linear_progression:tool/golden_sword run function linear_progression:tool_effects
+# Gold tool speed: applied via global_systems on inventory change (not every tick).
 
 # Store the Y position of all non-player entities that don’t have the 'deep_boosted' tag
 execute as @e[type=#undead,tag=!deep_boosted] store result score @s y_pos run data get entity @s Pos[1] 100

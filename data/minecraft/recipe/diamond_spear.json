@@ -1,15 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "pattern": ["  b", " a ", "a  "],
+  "pattern": [
+    "  b",
+    " a ",
+    "a  "
+  ],
   "key": {
     "b": "minecraft:diamond",
     "a": "minecraft:amethyst_shard"
   },
   "result": {
-    "id": "minecraft:diamond_spear",
-    "components": {
-      "minecraft:unbreakable": {}
-    }
+    "id": "minecraft:diamond_spear"
   }
 }
