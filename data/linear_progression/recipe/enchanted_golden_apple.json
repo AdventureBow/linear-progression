@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "EEE",
+    "EAE",
+    "EEE"
+  ],
+  "key": {
+    "E": "minecraft:experience_bottle",
+    "A": "minecraft:golden_apple"
+  },
+  "result": {
+    "id": "minecraft:enchanted_golden_apple",
+    "count": 1
+  }
+}

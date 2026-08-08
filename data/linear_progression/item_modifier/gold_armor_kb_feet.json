@@ -1,0 +1,26 @@
+[
+  {
+    "function": "minecraft:set_attributes",
+    "replace": false,
+    "modifiers": [
+      {
+        "attribute": "minecraft:knockback_resistance",
+        "id": "linear_progression:gold_armor_kb_feet",
+        "amount": 0.1,
+        "operation": "add_value",
+        "slot": "feet"
+      },
+      {
+        "attribute": "minecraft:movement_speed",
+        "id": "linear_progression:gold_armor_speed_feet",
+        "amount": 0.1,
+        "operation": "add_multiplied_base",
+        "slot": "feet"
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{lp_gold_armor:1b}"
+  }
+]

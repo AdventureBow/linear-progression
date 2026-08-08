@@ -1,7 +1,20 @@
-# Find untagged thrown eyes, schedule their replacement.
-execute as @e[type=eye_of_ender,tag=!unbreakable,limit=1] at @s run function linear_progression:unbreakable_eye/schedule_unbreakable_eye
+# Unbreakable ender eyes — per-entity timers (multiplayer-safe)
+function linear_progression:unbreakable_eye/tick
 
 # Inventory systems (durability, etc.) run via detect/inventory_changed → global_systems.
+# Per-player rearm countdown (replaces global schedule)
+function linear_progression:global_systems/retrigger
+
+# Overworld better-respawn:
+# 1) await dead → alive: arm respawn_delay
+# 2) try_place: if >300 from bed, pick spot + forceload
+# 3) respawn/tick FIRST so wait=1 is one full tick, then place once
+# 4) verify real move away from bed; delayed forceload remove (no stuck Loading terrain)
+function linear_progression:respawn/tick
+execute as @a[tag=respawn_delay] run function linear_progression:respawn/try_place
+execute as @a[tag=await_respawn_place] store result score @s respawn_calc run data get entity @s Health
+execute as @a[tag=await_respawn_place,scores={respawn_calc=1..}] run tag @s add respawn_delay
+execute as @a[tag=await_respawn_place,scores={respawn_calc=1..}] run tag @s remove await_respawn_place
 
 # Run golden armor effects if predicate returns true
 execute as @e[predicate=linear_progression:armored_mobs] at @s[tag=!gold_armor_head] if predicate linear_progression:armor/golden_armor/golden_head run function linear_progression:armor_effects/apply_golden_effects
@@ -17,23 +30,10 @@ execute as @e[predicate=linear_progression:armored_mobs] at @s if predicate line
 
 # Gold tool speed: applied via global_systems on inventory change (not every tick).
 
-# Store the Y position of all non-player entities that don’t have the 'deep_boosted' tag
-execute as @e[type=#undead,tag=!deep_boosted] store result score @s y_pos run data get entity @s Pos[1] 100
+# Powerful Trims (armor trim material effects) — modular per-material ticks
+function linear_progression:trim_effects/tick
 
-# Apply boosts to mobs at or below Y=0 that don’t have the boost yet
-execute if score #global difficulty_level matches 0 as @e[type=#undead,tag=!deep_boosted,scores={y_pos=..0}] if predicate linear_progression:wear_armor if predicate linear_progression:armored_mobs run function linear_progression:difficulty_boost/deep_mode
-
-# Update difficulty_level based on advancements
-execute if entity @a[advancements={minecraft:story/enter_the_nether=true},tag=!hard] run scoreboard players set #global difficulty_level 1
-execute as @a[advancements={minecraft:story/enter_the_nether=true},tag=!hard] if score #global difficulty_level matches 1 run tag @s add hard
-execute if entity @a[advancements={minecraft:end/kill_dragon=true},tag=!master] run scoreboard players set #global difficulty_level 2
-execute as @a[advancements={minecraft:end/kill_dragon=true},tag=!master] if score #global difficulty_level matches 1 run tag @s add master
-
-# Apply boost function to mobs based on current difficulty_level
-execute if score #global difficulty_level matches 1 as @e[type=!player,tag=!boosted] if predicate linear_progression:wear_armor if predicate linear_progression:armored_mobs run function linear_progression:difficulty_boost/hard_mode
-execute if score #global difficulty_level matches 2 as @e[type=!player,tag=!boosted] if predicate linear_progression:wear_armor if predicate linear_progression:armored_mobs run function linear_progression:difficulty_boost/master_mode
-
-# Every 10 ticks: low-frequency tasks (villager trade strip, shulker conversion)
+# Every 10 ticks: low-frequency GS (villagers, shulkers, difficulty armor equip)
 scoreboard players add #global tick_mod 1
 execute if score #global tick_mod matches 10.. run function linear_progression:slow_tick
 execute if score #global tick_mod matches 10.. run scoreboard players set #global tick_mod 0

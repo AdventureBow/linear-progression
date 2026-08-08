@@ -1,0 +1,5 @@
+# Fixed: particles at this entity (was broken execute at @a in source pack)
+execute if predicate linear_progression:trim_effects/particle if predicate linear_progression:trim_effects/lapis/head unless score @s copper_trim matches 1..4 anchored feet rotated ~ 0 positioned ^ ^ ^-.2 run particle minecraft:enchant ~ ~2 ~ .1 .03 .2 0.01 1 normal
+execute if predicate linear_progression:trim_effects/particle if predicate linear_progression:trim_effects/lapis/chest unless score @s copper_trim matches 1..4 anchored feet rotated ~ 0 positioned ^ ^ ^-.2 run particle minecraft:enchant ~ ~1.3 ~ .1 .03 .2 0.01 1 normal
+execute if predicate linear_progression:trim_effects/particle if predicate linear_progression:trim_effects/lapis/legs unless score @s copper_trim matches 1..4 anchored feet rotated ~ 0 positioned ^ ^ ^-.2 run particle minecraft:enchant ~ ~.8 ~ .1 .03 .2 0.01 1 normal
+execute if predicate linear_progression:trim_effects/particle if predicate linear_progression:trim_effects/lapis/feet unless score @s copper_trim matches 1..4 anchored feet rotated ~ 0 positioned ^ ^ ^-.2 run particle minecraft:enchant ~ ~.3 ~ .1 .03 .2 0.01 1 normal

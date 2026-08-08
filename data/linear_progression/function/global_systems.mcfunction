@@ -2,7 +2,8 @@
 
 function linear_progression:global_systems/durability
 function linear_progression:global_systems/gold_tool_efficiency
+function linear_progression:global_systems/gold_armor_kb
 
-# Revoke next tick so item-modify inventory events don't re-fire this run.
-tag @s add gs_retrigger
-schedule function linear_progression:global_systems/retrigger 2t append
+# Per-player rearm: tick counts down gs_rearm, then revokes advancement for this player only.
+# (No global schedule — avoids stacked schedules when many players shuffle inventory.)
+scoreboard players set @s gs_rearm 2

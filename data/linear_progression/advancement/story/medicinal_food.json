@@ -8,7 +8,7 @@
       }
     },
     "title": "Medicinal Food",
-    "description": "Food with potion effect infusions.",
+    "description": "Craft food with flowers and honey for potion effect infusions.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
