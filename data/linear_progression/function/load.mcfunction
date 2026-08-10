@@ -31,6 +31,9 @@ scoreboard objectives add trim_pat dummy
 scoreboard objectives add tick_mod dummy
 scoreboard players set #global tick_mod 0
 
+# Mob stats: arrow damage math for skeleton archers
+scoreboard objectives add arrow_dmg dummy
+
 # Soft-despawn idle timer for natural shulkers (slow_tick units)
 scoreboard objectives add shulker_idle dummy
 

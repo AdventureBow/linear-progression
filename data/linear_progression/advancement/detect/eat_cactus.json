@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "eat_cactus": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:cactus"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "linear_progression:edible/cactus_hurt"
+  }
+}

@@ -4,8 +4,8 @@ scoreboard players set @s trim_chance 0
 # Hard trim material table (redstone/copper/emerald/amethyst boosted + iron/gold tiers)
 scoreboard players set #trim_mode trim_mat 0
 
-# Check if mob gets armor
-execute if predicate linear_progression:rarity/common run scoreboard players set @s armor_chance 1
+# Check if mob gets armor (was common 0.7; rare 0.3 ≈ half)
+execute if predicate linear_progression:rarity/rare run scoreboard players set @s armor_chance 1
 
 # Hard-only: gold & iron more common (easier upgrades up the ladder)
 # T1 copper → T2 chain (half was rare) → T3 gold (common was half) → T4 iron (common)
