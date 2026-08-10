@@ -1,0 +1,42 @@
+# Stamp turtle helmet: water_movement_efficiency 0.3. Once via lp_turtle:1b.
+# Wet speed +50% + WB while worn: armor_effects/turtle_water_breathing.
+
+execute if items entity @s container.0 minecraft:turtle_helmet unless items entity @s container.0 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.0 linear_progression:turtle_helmet
+execute if items entity @s container.1 minecraft:turtle_helmet unless items entity @s container.1 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.1 linear_progression:turtle_helmet
+execute if items entity @s container.2 minecraft:turtle_helmet unless items entity @s container.2 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.2 linear_progression:turtle_helmet
+execute if items entity @s container.3 minecraft:turtle_helmet unless items entity @s container.3 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.3 linear_progression:turtle_helmet
+execute if items entity @s container.4 minecraft:turtle_helmet unless items entity @s container.4 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.4 linear_progression:turtle_helmet
+execute if items entity @s container.5 minecraft:turtle_helmet unless items entity @s container.5 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.5 linear_progression:turtle_helmet
+execute if items entity @s container.6 minecraft:turtle_helmet unless items entity @s container.6 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.6 linear_progression:turtle_helmet
+execute if items entity @s container.7 minecraft:turtle_helmet unless items entity @s container.7 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.7 linear_progression:turtle_helmet
+execute if items entity @s container.8 minecraft:turtle_helmet unless items entity @s container.8 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.8 linear_progression:turtle_helmet
+execute if items entity @s container.9 minecraft:turtle_helmet unless items entity @s container.9 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.9 linear_progression:turtle_helmet
+execute if items entity @s container.10 minecraft:turtle_helmet unless items entity @s container.10 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.10 linear_progression:turtle_helmet
+execute if items entity @s container.11 minecraft:turtle_helmet unless items entity @s container.11 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.11 linear_progression:turtle_helmet
+execute if items entity @s container.12 minecraft:turtle_helmet unless items entity @s container.12 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.12 linear_progression:turtle_helmet
+execute if items entity @s container.13 minecraft:turtle_helmet unless items entity @s container.13 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.13 linear_progression:turtle_helmet
+execute if items entity @s container.14 minecraft:turtle_helmet unless items entity @s container.14 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.14 linear_progression:turtle_helmet
+execute if items entity @s container.15 minecraft:turtle_helmet unless items entity @s container.15 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.15 linear_progression:turtle_helmet
+execute if items entity @s container.16 minecraft:turtle_helmet unless items entity @s container.16 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.16 linear_progression:turtle_helmet
+execute if items entity @s container.17 minecraft:turtle_helmet unless items entity @s container.17 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.17 linear_progression:turtle_helmet
+execute if items entity @s container.18 minecraft:turtle_helmet unless items entity @s container.18 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.18 linear_progression:turtle_helmet
+execute if items entity @s container.19 minecraft:turtle_helmet unless items entity @s container.19 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.19 linear_progression:turtle_helmet
+execute if items entity @s container.20 minecraft:turtle_helmet unless items entity @s container.20 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.20 linear_progression:turtle_helmet
+execute if items entity @s container.21 minecraft:turtle_helmet unless items entity @s container.21 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.21 linear_progression:turtle_helmet
+execute if items entity @s container.22 minecraft:turtle_helmet unless items entity @s container.22 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.22 linear_progression:turtle_helmet
+execute if items entity @s container.23 minecraft:turtle_helmet unless items entity @s container.23 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.23 linear_progression:turtle_helmet
+execute if items entity @s container.24 minecraft:turtle_helmet unless items entity @s container.24 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.24 linear_progression:turtle_helmet
+execute if items entity @s container.25 minecraft:turtle_helmet unless items entity @s container.25 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.25 linear_progression:turtle_helmet
+execute if items entity @s container.26 minecraft:turtle_helmet unless items entity @s container.26 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.26 linear_progression:turtle_helmet
+execute if items entity @s container.27 minecraft:turtle_helmet unless items entity @s container.27 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.27 linear_progression:turtle_helmet
+execute if items entity @s container.28 minecraft:turtle_helmet unless items entity @s container.28 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.28 linear_progression:turtle_helmet
+execute if items entity @s container.29 minecraft:turtle_helmet unless items entity @s container.29 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.29 linear_progression:turtle_helmet
+execute if items entity @s container.30 minecraft:turtle_helmet unless items entity @s container.30 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.30 linear_progression:turtle_helmet
+execute if items entity @s container.31 minecraft:turtle_helmet unless items entity @s container.31 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.31 linear_progression:turtle_helmet
+execute if items entity @s container.32 minecraft:turtle_helmet unless items entity @s container.32 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.32 linear_progression:turtle_helmet
+execute if items entity @s container.33 minecraft:turtle_helmet unless items entity @s container.33 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.33 linear_progression:turtle_helmet
+execute if items entity @s container.34 minecraft:turtle_helmet unless items entity @s container.34 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.34 linear_progression:turtle_helmet
+execute if items entity @s container.35 minecraft:turtle_helmet unless items entity @s container.35 *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s container.35 linear_progression:turtle_helmet
+execute if items entity @s armor.head minecraft:turtle_helmet unless items entity @s armor.head *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s armor.head linear_progression:turtle_helmet
+execute if items entity @s weapon.offhand minecraft:turtle_helmet unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s weapon.offhand linear_progression:turtle_helmet
+execute if items entity @s player.cursor minecraft:turtle_helmet unless items entity @s player.cursor *[minecraft:custom_data~{lp_turtle:1b}] run item modify entity @s player.cursor linear_progression:turtle_helmet

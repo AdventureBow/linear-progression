@@ -6,7 +6,7 @@ execute if entity @s[tag=!netherite_head] if predicate linear_progression:trim_e
 execute if entity @s[tag=!netherite_chest] if predicate linear_progression:trim_effects/netherite/chest run function linear_progression:trim_effects/netherite/apply
 execute if entity @s[tag=!netherite_legs] if predicate linear_progression:trim_effects/netherite/legs run function linear_progression:trim_effects/netherite/apply
 execute if entity @s[tag=!netherite_feet] if predicate linear_progression:trim_effects/netherite/feet run function linear_progression:trim_effects/netherite/apply
-execute if predicate linear_progression:trim_effects/netherite/head if predicate linear_progression:trim_effects/netherite/chest if predicate linear_progression:trim_effects/netherite/legs if predicate linear_progression:trim_effects/netherite/feet run function linear_progression:trim_effects/netherite/fire_resistance
+# Full-trim FR: armor_effects/netherite_fr_player (netherite_total counts trims)
 execute if entity @s[tag=netherite_head] unless predicate linear_progression:trim_effects/netherite/head run function linear_progression:trim_effects/netherite/remove
 execute if entity @s[tag=netherite_chest] unless predicate linear_progression:trim_effects/netherite/chest run function linear_progression:trim_effects/netherite/remove
 execute if entity @s[tag=netherite_legs] unless predicate linear_progression:trim_effects/netherite/legs run function linear_progression:trim_effects/netherite/remove

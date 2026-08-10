@@ -10,8 +10,18 @@ function linear_progression:health/set_max_hp
 # Drop armor/trim effect tags so tick re-applies after respawn (keepInventory keeps items)
 function linear_progression:armor_effects/clear_effect_tags
 
+# keepInventory fixes:
+# - Binding soft-lock → strip Binding from armor
+# - Vanishing does nothing → delete vanishing-cursed items
+function linear_progression:curses/strip_binding
+function linear_progression:curses/clear_vanishing
+# Run again once alive — item ops while Health is 0 can fail
+tag @s add lp_strip_binding
+
 # Overworld random respawn system (Nether/End ignored inside on_death)
 function linear_progression:respawn/on_death
 
 # Allow the death advancement to fire again next death
 advancement revoke @s only linear_progression:health/player_died
+
+

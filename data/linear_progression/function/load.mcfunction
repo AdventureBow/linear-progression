@@ -4,6 +4,8 @@ gamerule keep_inventory true
 scoreboard objectives add netherite_total dummy
 scoreboard objectives add fire_resistance dummy
 scoreboard objectives add netherite_trim dummy
+# Saved fire_resistance duration (ticks) from potions when equipping full netherite
+scoreboard objectives add netherite_fr_dur dummy
 
 # Powerful Trims piece-count scores
 scoreboard objectives add lapis_trim dummy
@@ -33,6 +35,13 @@ scoreboard players set #global tick_mod 0
 
 # Mob stats: arrow damage math for skeleton archers
 scoreboard objectives add arrow_dmg dummy
+
+# Turtle helmet: saved water_breathing duration (ticks) from potions when equipping
+scoreboard objectives add turtle_wb_dur dummy
+
+# Chainmail sat drip (piece count + timer)
+scoreboard objectives add chain_pcs dummy
+scoreboard objectives add chain_timer dummy
 
 # Soft-despawn idle timer for natural shulkers (slow_tick units)
 scoreboard objectives add shulker_idle dummy

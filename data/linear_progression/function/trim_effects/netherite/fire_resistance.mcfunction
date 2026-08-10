@@ -1,2 +1,2 @@
-# Full netherite-trim set → fire resistance (also covered by LP armor FR when mixed with netherite armor)
-effect give @s minecraft:fire_resistance 1 0 true
+# Full netherite-trim FR is handled by armor_effects/netherite_fr_player
+# (counts netherite trims into netherite_total). No-op so we do not fight potion FR.

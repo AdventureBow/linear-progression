@@ -1,0 +1,19 @@
+[
+  {
+    "function": "minecraft:set_attributes",
+    "replace": false,
+    "modifiers": [
+      {
+        "attribute": "minecraft:water_movement_efficiency",
+        "id": "linear_progression:turtle_swim",
+        "amount": 0.3,
+        "operation": "add_value",
+        "slot": "head"
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{lp_turtle:1b}"
+  }
+]

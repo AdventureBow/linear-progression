@@ -1,0 +1,19 @@
+[
+  {
+    "function": "minecraft:set_attributes",
+    "replace": false,
+    "modifiers": [
+      {
+        "attribute": "minecraft:movement_speed",
+        "id": "linear_progression:chainmail_speed_head",
+        "amount": 0.05,
+        "operation": "add_multiplied_base",
+        "slot": "head"
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_data",
+    "tag": "{lp_chain_speed:1b}"
+  }
+]
