@@ -36,6 +36,9 @@ function linear_progression:trim_effects/tick
 # Arrow boosts: skeleton/stray/bogged +2 dmg, amethyst +0.5/piece, dispenser ×8 straight + 0.6 dmg + sound
 function linear_progression:arrow_boost/tick
 
+# Master: no common hostiles in open sky or at/above sea level (overworld)
+function linear_progression:surface_cull/tick
+
 # Every 10 ticks: low-frequency GS (villagers, shulkers, difficulty armor equip)
 scoreboard players add #global tick_mod 1
 execute if score #global tick_mod matches 10.. run function linear_progression:slow_tick

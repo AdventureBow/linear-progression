@@ -1,0 +1,222 @@
+{
+  "parent": "linear_progression:story/hidden_magic",
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_chestplate",
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:amethyst",
+          "pattern": "minecraft:silence"
+        }
+      }
+    },
+    "title": "Master Wizard",
+    "description": "Acme Gandalf, obtain all trim powers",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "trim_amethyst": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_copper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:copper"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:diamond"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_emerald": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:emerald"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_gold": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:gold"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:iron"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_lapis": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:lapis"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_netherite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:netherite"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:quartz"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_redstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:redstone"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "trim_resin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {
+                "material": "minecraft:resin"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "trim_amethyst"
+    ],
+    [
+      "trim_copper"
+    ],
+    [
+      "trim_diamond"
+    ],
+    [
+      "trim_emerald"
+    ],
+    [
+      "trim_gold"
+    ],
+    [
+      "trim_iron"
+    ],
+    [
+      "trim_lapis"
+    ],
+    [
+      "trim_netherite"
+    ],
+    [
+      "trim_quartz"
+    ],
+    [
+      "trim_redstone"
+    ],
+    [
+      "trim_resin"
+    ]
+  ]
+}

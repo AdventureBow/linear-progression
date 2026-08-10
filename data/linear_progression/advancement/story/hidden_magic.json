@@ -1,0 +1,29 @@
+{
+  "parent": "linear_progression:story/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:amethyst_shard"
+    },
+    "title": "Hidden Magic",
+    "description": "Acme Imbue, trim armor for superpowers",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_trimmed_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:trimmable_armor",
+            "predicates": {
+              "minecraft:trim": {}
+            }
+          }
+        ]
+      }
+    }
+  }
+}

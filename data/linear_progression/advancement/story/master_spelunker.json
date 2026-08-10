@@ -1,0 +1,87 @@
+{
+  "parent": "linear_progression:story/hidden_magic",
+  "display": {
+    "icon": {
+      "id": "minecraft:golden_pickaxe"
+    },
+    "title": "Master Spelunker",
+    "description": "Insta-mine deepslate",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gold_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:golden_pickaxe",
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:efficiency",
+                  "levels": {
+                    "min": 5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "full_gold_trim_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "head": {
+                  "items": "#minecraft:trimmable_armor",
+                  "predicates": {
+                    "minecraft:trim": {
+                      "material": "minecraft:gold"
+                    }
+                  }
+                },
+                "chest": {
+                  "items": "#minecraft:trimmable_armor",
+                  "predicates": {
+                    "minecraft:trim": {
+                      "material": "minecraft:gold"
+                    }
+                  }
+                },
+                "legs": {
+                  "items": "#minecraft:trimmable_armor",
+                  "predicates": {
+                    "minecraft:trim": {
+                      "material": "minecraft:gold"
+                    }
+                  }
+                },
+                "feet": {
+                  "items": "#minecraft:trimmable_armor",
+                  "predicates": {
+                    "minecraft:trim": {
+                      "material": "minecraft:gold"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["gold_pickaxe"],
+    ["full_gold_trim_armor"]
+  ]
+}

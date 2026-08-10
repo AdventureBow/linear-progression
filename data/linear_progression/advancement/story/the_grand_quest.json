@@ -1,0 +1,26 @@
+{
+  "parent": "linear_progression:story/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:ender_eye"
+    },
+    "title": "The Grand Quest",
+    "description": "obtain an eye of ender",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_eye_of_ender": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:ender_eye"
+          }
+        ]
+      }
+    }
+  }
+}

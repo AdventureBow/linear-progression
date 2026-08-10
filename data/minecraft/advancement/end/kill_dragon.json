@@ -17,16 +17,12 @@
     }
   },
   "display": {
-    "description": {
-      "translate": "You beat the game... Or did you?"
-    },
+    "description": "This doesn't have to be the end",
     "icon": {
       "count": 1,
       "id": "minecraft:dragon_head"
     },
-    "title": {
-      "translate": "Quest Completed?"
-    }
+    "title": "Quest Completed"
   },
   "requirements": [["killed_dragon"]],
   "sends_telemetry_event": true

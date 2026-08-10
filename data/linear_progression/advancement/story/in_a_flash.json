@@ -1,0 +1,26 @@
+{
+  "parent": "linear_progression:story/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:golden_boots"
+    },
+    "title": "In a Flash",
+    "description": "increase speed with gold armor",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_gold_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#linear_progression:golden_armor"
+          }
+        ]
+      }
+    }
+  }
+}

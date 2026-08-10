@@ -12,7 +12,7 @@
           {
             "blocks": "#linear_progression:deepslate_blocks",
             "correct_for_drops": true,
-            "speed": 18
+            "speed": 9
           },
           {
             "blocks": "#minecraft:mineable/pickaxe",
@@ -25,6 +25,6 @@
   },
   {
     "function": "set_custom_data",
-    "tag": "{lp_gold_speed:2b}"
+    "tag": "{lp_gold_speed:4b}"
   }
 ]
