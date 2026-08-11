@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["ccc", "cvc", "ccc"],
+  "key": {
+    "c": "minecraft:paper",
+    "v": "minecraft:feather"
+  },
+  "result": {
+    "id": "minecraft:map"
+  }
+}

@@ -1,20 +1,18 @@
-# GS: stamp gold armor in carry slots only (early-out if none present).
-execute unless items entity @s container.* #linear_progression:golden_armor unless items entity @s weapon.* #linear_progression:golden_armor unless items entity @s player.cursor #linear_progression:golden_armor run return fail
-
+# Stamp worn gold armor only (equip path).
 data modify storage linear_progression:stamp_args marker set value "{lp_gold_armor:1b}"
-
 data modify storage linear_progression:stamp_args item set value "minecraft:golden_helmet"
 data modify storage linear_progression:stamp_args modifier set value "linear_progression:gold_armor_kb_head"
-function linear_progression:global_systems/stamp/carry
-
+data modify storage linear_progression:stamp_args slot set value "armor.head"
+function linear_progression:global_systems/stamp/one with storage linear_progression:stamp_args
 data modify storage linear_progression:stamp_args item set value "minecraft:golden_chestplate"
 data modify storage linear_progression:stamp_args modifier set value "linear_progression:gold_armor_kb_chest"
-function linear_progression:global_systems/stamp/carry
-
+data modify storage linear_progression:stamp_args slot set value "armor.chest"
+function linear_progression:global_systems/stamp/one with storage linear_progression:stamp_args
 data modify storage linear_progression:stamp_args item set value "minecraft:golden_leggings"
 data modify storage linear_progression:stamp_args modifier set value "linear_progression:gold_armor_kb_legs"
-function linear_progression:global_systems/stamp/carry
-
+data modify storage linear_progression:stamp_args slot set value "armor.legs"
+function linear_progression:global_systems/stamp/one with storage linear_progression:stamp_args
 data modify storage linear_progression:stamp_args item set value "minecraft:golden_boots"
 data modify storage linear_progression:stamp_args modifier set value "linear_progression:gold_armor_kb_feet"
-function linear_progression:global_systems/stamp/carry
+data modify storage linear_progression:stamp_args slot set value "armor.feet"
+function linear_progression:global_systems/stamp/one with storage linear_progression:stamp_args

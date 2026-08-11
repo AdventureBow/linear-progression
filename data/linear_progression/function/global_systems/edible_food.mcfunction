@@ -1,421 +1,57 @@
-# Stamp pack edible overrides once (lp_edible).
-# Runs from GS on inventory change (craft/loot/trade/creative/etc).
+# GS: stamp pack edibles in carry slots (early-out if none present).
+execute unless items entity @s container.* #linear_progression:stamp_edibles unless items entity @s weapon.* #linear_progression:stamp_edibles unless items entity @s player.cursor #linear_progression:stamp_edibles run return fail
 
-execute if items entity @s container.0 minecraft:glistering_melon_slice unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_glistering_melon
-execute if items entity @s container.0 minecraft:sugar unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_sugar
-execute if items entity @s container.0 minecraft:nether_wart unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_nether_wart
-execute if items entity @s container.0 minecraft:golden_carrot unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_golden_carrot
-execute if items entity @s container.0 minecraft:cooked_rabbit unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.0 minecraft:dried_kelp unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_dried_kelp
-execute if items entity @s container.0 minecraft:cooked_cod unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_cooked_cod
-execute if items entity @s container.0 minecraft:cooked_salmon unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_cooked_salmon
-execute if items entity @s container.0 minecraft:cooked_porkchop unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.0 minecraft:cooked_beef unless items entity @s container.0 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.0 linear_progression:edible_cooked_beef
-execute if items entity @s container.0 minecraft:cactus unless items entity @s container.0 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.0 linear_progression:edible_cactus
-execute if items entity @s container.1 minecraft:glistering_melon_slice unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_glistering_melon
-execute if items entity @s container.1 minecraft:sugar unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_sugar
-execute if items entity @s container.1 minecraft:nether_wart unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_nether_wart
-execute if items entity @s container.1 minecraft:golden_carrot unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_golden_carrot
-execute if items entity @s container.1 minecraft:cooked_rabbit unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.1 minecraft:dried_kelp unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_dried_kelp
-execute if items entity @s container.1 minecraft:cooked_cod unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_cooked_cod
-execute if items entity @s container.1 minecraft:cooked_salmon unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_cooked_salmon
-execute if items entity @s container.1 minecraft:cooked_porkchop unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.1 minecraft:cooked_beef unless items entity @s container.1 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.1 linear_progression:edible_cooked_beef
-execute if items entity @s container.1 minecraft:cactus unless items entity @s container.1 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.1 linear_progression:edible_cactus
-execute if items entity @s container.2 minecraft:glistering_melon_slice unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_glistering_melon
-execute if items entity @s container.2 minecraft:sugar unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_sugar
-execute if items entity @s container.2 minecraft:nether_wart unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_nether_wart
-execute if items entity @s container.2 minecraft:golden_carrot unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_golden_carrot
-execute if items entity @s container.2 minecraft:cooked_rabbit unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.2 minecraft:dried_kelp unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_dried_kelp
-execute if items entity @s container.2 minecraft:cooked_cod unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_cooked_cod
-execute if items entity @s container.2 minecraft:cooked_salmon unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_cooked_salmon
-execute if items entity @s container.2 minecraft:cooked_porkchop unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.2 minecraft:cooked_beef unless items entity @s container.2 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.2 linear_progression:edible_cooked_beef
-execute if items entity @s container.2 minecraft:cactus unless items entity @s container.2 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.2 linear_progression:edible_cactus
-execute if items entity @s container.3 minecraft:glistering_melon_slice unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_glistering_melon
-execute if items entity @s container.3 minecraft:sugar unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_sugar
-execute if items entity @s container.3 minecraft:nether_wart unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_nether_wart
-execute if items entity @s container.3 minecraft:golden_carrot unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_golden_carrot
-execute if items entity @s container.3 minecraft:cooked_rabbit unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.3 minecraft:dried_kelp unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_dried_kelp
-execute if items entity @s container.3 minecraft:cooked_cod unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_cooked_cod
-execute if items entity @s container.3 minecraft:cooked_salmon unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_cooked_salmon
-execute if items entity @s container.3 minecraft:cooked_porkchop unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.3 minecraft:cooked_beef unless items entity @s container.3 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.3 linear_progression:edible_cooked_beef
-execute if items entity @s container.3 minecraft:cactus unless items entity @s container.3 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.3 linear_progression:edible_cactus
-execute if items entity @s container.4 minecraft:glistering_melon_slice unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_glistering_melon
-execute if items entity @s container.4 minecraft:sugar unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_sugar
-execute if items entity @s container.4 minecraft:nether_wart unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_nether_wart
-execute if items entity @s container.4 minecraft:golden_carrot unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_golden_carrot
-execute if items entity @s container.4 minecraft:cooked_rabbit unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.4 minecraft:dried_kelp unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_dried_kelp
-execute if items entity @s container.4 minecraft:cooked_cod unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_cooked_cod
-execute if items entity @s container.4 minecraft:cooked_salmon unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_cooked_salmon
-execute if items entity @s container.4 minecraft:cooked_porkchop unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.4 minecraft:cooked_beef unless items entity @s container.4 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.4 linear_progression:edible_cooked_beef
-execute if items entity @s container.4 minecraft:cactus unless items entity @s container.4 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.4 linear_progression:edible_cactus
-execute if items entity @s container.5 minecraft:glistering_melon_slice unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_glistering_melon
-execute if items entity @s container.5 minecraft:sugar unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_sugar
-execute if items entity @s container.5 minecraft:nether_wart unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_nether_wart
-execute if items entity @s container.5 minecraft:golden_carrot unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_golden_carrot
-execute if items entity @s container.5 minecraft:cooked_rabbit unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.5 minecraft:dried_kelp unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_dried_kelp
-execute if items entity @s container.5 minecraft:cooked_cod unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_cooked_cod
-execute if items entity @s container.5 minecraft:cooked_salmon unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_cooked_salmon
-execute if items entity @s container.5 minecraft:cooked_porkchop unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.5 minecraft:cooked_beef unless items entity @s container.5 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.5 linear_progression:edible_cooked_beef
-execute if items entity @s container.5 minecraft:cactus unless items entity @s container.5 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.5 linear_progression:edible_cactus
-execute if items entity @s container.6 minecraft:glistering_melon_slice unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_glistering_melon
-execute if items entity @s container.6 minecraft:sugar unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_sugar
-execute if items entity @s container.6 minecraft:nether_wart unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_nether_wart
-execute if items entity @s container.6 minecraft:golden_carrot unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_golden_carrot
-execute if items entity @s container.6 minecraft:cooked_rabbit unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.6 minecraft:dried_kelp unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_dried_kelp
-execute if items entity @s container.6 minecraft:cooked_cod unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_cooked_cod
-execute if items entity @s container.6 minecraft:cooked_salmon unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_cooked_salmon
-execute if items entity @s container.6 minecraft:cooked_porkchop unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.6 minecraft:cooked_beef unless items entity @s container.6 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.6 linear_progression:edible_cooked_beef
-execute if items entity @s container.6 minecraft:cactus unless items entity @s container.6 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.6 linear_progression:edible_cactus
-execute if items entity @s container.7 minecraft:glistering_melon_slice unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_glistering_melon
-execute if items entity @s container.7 minecraft:sugar unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_sugar
-execute if items entity @s container.7 minecraft:nether_wart unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_nether_wart
-execute if items entity @s container.7 minecraft:golden_carrot unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_golden_carrot
-execute if items entity @s container.7 minecraft:cooked_rabbit unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.7 minecraft:dried_kelp unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_dried_kelp
-execute if items entity @s container.7 minecraft:cooked_cod unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_cooked_cod
-execute if items entity @s container.7 minecraft:cooked_salmon unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_cooked_salmon
-execute if items entity @s container.7 minecraft:cooked_porkchop unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.7 minecraft:cooked_beef unless items entity @s container.7 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.7 linear_progression:edible_cooked_beef
-execute if items entity @s container.7 minecraft:cactus unless items entity @s container.7 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.7 linear_progression:edible_cactus
-execute if items entity @s container.8 minecraft:glistering_melon_slice unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_glistering_melon
-execute if items entity @s container.8 minecraft:sugar unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_sugar
-execute if items entity @s container.8 minecraft:nether_wart unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_nether_wart
-execute if items entity @s container.8 minecraft:golden_carrot unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_golden_carrot
-execute if items entity @s container.8 minecraft:cooked_rabbit unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.8 minecraft:dried_kelp unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_dried_kelp
-execute if items entity @s container.8 minecraft:cooked_cod unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_cooked_cod
-execute if items entity @s container.8 minecraft:cooked_salmon unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_cooked_salmon
-execute if items entity @s container.8 minecraft:cooked_porkchop unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.8 minecraft:cooked_beef unless items entity @s container.8 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.8 linear_progression:edible_cooked_beef
-execute if items entity @s container.8 minecraft:cactus unless items entity @s container.8 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.8 linear_progression:edible_cactus
-execute if items entity @s container.9 minecraft:glistering_melon_slice unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_glistering_melon
-execute if items entity @s container.9 minecraft:sugar unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_sugar
-execute if items entity @s container.9 minecraft:nether_wart unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_nether_wart
-execute if items entity @s container.9 minecraft:golden_carrot unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_golden_carrot
-execute if items entity @s container.9 minecraft:cooked_rabbit unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.9 minecraft:dried_kelp unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_dried_kelp
-execute if items entity @s container.9 minecraft:cooked_cod unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_cooked_cod
-execute if items entity @s container.9 minecraft:cooked_salmon unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_cooked_salmon
-execute if items entity @s container.9 minecraft:cooked_porkchop unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.9 minecraft:cooked_beef unless items entity @s container.9 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.9 linear_progression:edible_cooked_beef
-execute if items entity @s container.9 minecraft:cactus unless items entity @s container.9 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.9 linear_progression:edible_cactus
-execute if items entity @s container.10 minecraft:glistering_melon_slice unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_glistering_melon
-execute if items entity @s container.10 minecraft:sugar unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_sugar
-execute if items entity @s container.10 minecraft:nether_wart unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_nether_wart
-execute if items entity @s container.10 minecraft:golden_carrot unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_golden_carrot
-execute if items entity @s container.10 minecraft:cooked_rabbit unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.10 minecraft:dried_kelp unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_dried_kelp
-execute if items entity @s container.10 minecraft:cooked_cod unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_cooked_cod
-execute if items entity @s container.10 minecraft:cooked_salmon unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_cooked_salmon
-execute if items entity @s container.10 minecraft:cooked_porkchop unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.10 minecraft:cooked_beef unless items entity @s container.10 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.10 linear_progression:edible_cooked_beef
-execute if items entity @s container.10 minecraft:cactus unless items entity @s container.10 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.10 linear_progression:edible_cactus
-execute if items entity @s container.11 minecraft:glistering_melon_slice unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_glistering_melon
-execute if items entity @s container.11 minecraft:sugar unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_sugar
-execute if items entity @s container.11 minecraft:nether_wart unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_nether_wart
-execute if items entity @s container.11 minecraft:golden_carrot unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_golden_carrot
-execute if items entity @s container.11 minecraft:cooked_rabbit unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.11 minecraft:dried_kelp unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_dried_kelp
-execute if items entity @s container.11 minecraft:cooked_cod unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_cooked_cod
-execute if items entity @s container.11 minecraft:cooked_salmon unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_cooked_salmon
-execute if items entity @s container.11 minecraft:cooked_porkchop unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.11 minecraft:cooked_beef unless items entity @s container.11 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.11 linear_progression:edible_cooked_beef
-execute if items entity @s container.11 minecraft:cactus unless items entity @s container.11 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.11 linear_progression:edible_cactus
-execute if items entity @s container.12 minecraft:glistering_melon_slice unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_glistering_melon
-execute if items entity @s container.12 minecraft:sugar unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_sugar
-execute if items entity @s container.12 minecraft:nether_wart unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_nether_wart
-execute if items entity @s container.12 minecraft:golden_carrot unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_golden_carrot
-execute if items entity @s container.12 minecraft:cooked_rabbit unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.12 minecraft:dried_kelp unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_dried_kelp
-execute if items entity @s container.12 minecraft:cooked_cod unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_cooked_cod
-execute if items entity @s container.12 minecraft:cooked_salmon unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_cooked_salmon
-execute if items entity @s container.12 minecraft:cooked_porkchop unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.12 minecraft:cooked_beef unless items entity @s container.12 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.12 linear_progression:edible_cooked_beef
-execute if items entity @s container.12 minecraft:cactus unless items entity @s container.12 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.12 linear_progression:edible_cactus
-execute if items entity @s container.13 minecraft:glistering_melon_slice unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_glistering_melon
-execute if items entity @s container.13 minecraft:sugar unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_sugar
-execute if items entity @s container.13 minecraft:nether_wart unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_nether_wart
-execute if items entity @s container.13 minecraft:golden_carrot unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_golden_carrot
-execute if items entity @s container.13 minecraft:cooked_rabbit unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.13 minecraft:dried_kelp unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_dried_kelp
-execute if items entity @s container.13 minecraft:cooked_cod unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_cooked_cod
-execute if items entity @s container.13 minecraft:cooked_salmon unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_cooked_salmon
-execute if items entity @s container.13 minecraft:cooked_porkchop unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.13 minecraft:cooked_beef unless items entity @s container.13 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.13 linear_progression:edible_cooked_beef
-execute if items entity @s container.13 minecraft:cactus unless items entity @s container.13 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.13 linear_progression:edible_cactus
-execute if items entity @s container.14 minecraft:glistering_melon_slice unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_glistering_melon
-execute if items entity @s container.14 minecraft:sugar unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_sugar
-execute if items entity @s container.14 minecraft:nether_wart unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_nether_wart
-execute if items entity @s container.14 minecraft:golden_carrot unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_golden_carrot
-execute if items entity @s container.14 minecraft:cooked_rabbit unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.14 minecraft:dried_kelp unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_dried_kelp
-execute if items entity @s container.14 minecraft:cooked_cod unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_cooked_cod
-execute if items entity @s container.14 minecraft:cooked_salmon unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_cooked_salmon
-execute if items entity @s container.14 minecraft:cooked_porkchop unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.14 minecraft:cooked_beef unless items entity @s container.14 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.14 linear_progression:edible_cooked_beef
-execute if items entity @s container.14 minecraft:cactus unless items entity @s container.14 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.14 linear_progression:edible_cactus
-execute if items entity @s container.15 minecraft:glistering_melon_slice unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_glistering_melon
-execute if items entity @s container.15 minecraft:sugar unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_sugar
-execute if items entity @s container.15 minecraft:nether_wart unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_nether_wart
-execute if items entity @s container.15 minecraft:golden_carrot unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_golden_carrot
-execute if items entity @s container.15 minecraft:cooked_rabbit unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.15 minecraft:dried_kelp unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_dried_kelp
-execute if items entity @s container.15 minecraft:cooked_cod unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_cooked_cod
-execute if items entity @s container.15 minecraft:cooked_salmon unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_cooked_salmon
-execute if items entity @s container.15 minecraft:cooked_porkchop unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.15 minecraft:cooked_beef unless items entity @s container.15 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.15 linear_progression:edible_cooked_beef
-execute if items entity @s container.15 minecraft:cactus unless items entity @s container.15 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.15 linear_progression:edible_cactus
-execute if items entity @s container.16 minecraft:glistering_melon_slice unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_glistering_melon
-execute if items entity @s container.16 minecraft:sugar unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_sugar
-execute if items entity @s container.16 minecraft:nether_wart unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_nether_wart
-execute if items entity @s container.16 minecraft:golden_carrot unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_golden_carrot
-execute if items entity @s container.16 minecraft:cooked_rabbit unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.16 minecraft:dried_kelp unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_dried_kelp
-execute if items entity @s container.16 minecraft:cooked_cod unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_cooked_cod
-execute if items entity @s container.16 minecraft:cooked_salmon unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_cooked_salmon
-execute if items entity @s container.16 minecraft:cooked_porkchop unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.16 minecraft:cooked_beef unless items entity @s container.16 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.16 linear_progression:edible_cooked_beef
-execute if items entity @s container.16 minecraft:cactus unless items entity @s container.16 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.16 linear_progression:edible_cactus
-execute if items entity @s container.17 minecraft:glistering_melon_slice unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_glistering_melon
-execute if items entity @s container.17 minecraft:sugar unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_sugar
-execute if items entity @s container.17 minecraft:nether_wart unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_nether_wart
-execute if items entity @s container.17 minecraft:golden_carrot unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_golden_carrot
-execute if items entity @s container.17 minecraft:cooked_rabbit unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.17 minecraft:dried_kelp unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_dried_kelp
-execute if items entity @s container.17 minecraft:cooked_cod unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_cooked_cod
-execute if items entity @s container.17 minecraft:cooked_salmon unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_cooked_salmon
-execute if items entity @s container.17 minecraft:cooked_porkchop unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.17 minecraft:cooked_beef unless items entity @s container.17 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.17 linear_progression:edible_cooked_beef
-execute if items entity @s container.17 minecraft:cactus unless items entity @s container.17 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.17 linear_progression:edible_cactus
-execute if items entity @s container.18 minecraft:glistering_melon_slice unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_glistering_melon
-execute if items entity @s container.18 minecraft:sugar unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_sugar
-execute if items entity @s container.18 minecraft:nether_wart unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_nether_wart
-execute if items entity @s container.18 minecraft:golden_carrot unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_golden_carrot
-execute if items entity @s container.18 minecraft:cooked_rabbit unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.18 minecraft:dried_kelp unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_dried_kelp
-execute if items entity @s container.18 minecraft:cooked_cod unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_cooked_cod
-execute if items entity @s container.18 minecraft:cooked_salmon unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_cooked_salmon
-execute if items entity @s container.18 minecraft:cooked_porkchop unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.18 minecraft:cooked_beef unless items entity @s container.18 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.18 linear_progression:edible_cooked_beef
-execute if items entity @s container.18 minecraft:cactus unless items entity @s container.18 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.18 linear_progression:edible_cactus
-execute if items entity @s container.19 minecraft:glistering_melon_slice unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_glistering_melon
-execute if items entity @s container.19 minecraft:sugar unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_sugar
-execute if items entity @s container.19 minecraft:nether_wart unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_nether_wart
-execute if items entity @s container.19 minecraft:golden_carrot unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_golden_carrot
-execute if items entity @s container.19 minecraft:cooked_rabbit unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.19 minecraft:dried_kelp unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_dried_kelp
-execute if items entity @s container.19 minecraft:cooked_cod unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_cooked_cod
-execute if items entity @s container.19 minecraft:cooked_salmon unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_cooked_salmon
-execute if items entity @s container.19 minecraft:cooked_porkchop unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.19 minecraft:cooked_beef unless items entity @s container.19 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.19 linear_progression:edible_cooked_beef
-execute if items entity @s container.19 minecraft:cactus unless items entity @s container.19 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.19 linear_progression:edible_cactus
-execute if items entity @s container.20 minecraft:glistering_melon_slice unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_glistering_melon
-execute if items entity @s container.20 minecraft:sugar unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_sugar
-execute if items entity @s container.20 minecraft:nether_wart unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_nether_wart
-execute if items entity @s container.20 minecraft:golden_carrot unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_golden_carrot
-execute if items entity @s container.20 minecraft:cooked_rabbit unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.20 minecraft:dried_kelp unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_dried_kelp
-execute if items entity @s container.20 minecraft:cooked_cod unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_cooked_cod
-execute if items entity @s container.20 minecraft:cooked_salmon unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_cooked_salmon
-execute if items entity @s container.20 minecraft:cooked_porkchop unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.20 minecraft:cooked_beef unless items entity @s container.20 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.20 linear_progression:edible_cooked_beef
-execute if items entity @s container.20 minecraft:cactus unless items entity @s container.20 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.20 linear_progression:edible_cactus
-execute if items entity @s container.21 minecraft:glistering_melon_slice unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_glistering_melon
-execute if items entity @s container.21 minecraft:sugar unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_sugar
-execute if items entity @s container.21 minecraft:nether_wart unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_nether_wart
-execute if items entity @s container.21 minecraft:golden_carrot unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_golden_carrot
-execute if items entity @s container.21 minecraft:cooked_rabbit unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.21 minecraft:dried_kelp unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_dried_kelp
-execute if items entity @s container.21 minecraft:cooked_cod unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_cooked_cod
-execute if items entity @s container.21 minecraft:cooked_salmon unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_cooked_salmon
-execute if items entity @s container.21 minecraft:cooked_porkchop unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.21 minecraft:cooked_beef unless items entity @s container.21 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.21 linear_progression:edible_cooked_beef
-execute if items entity @s container.21 minecraft:cactus unless items entity @s container.21 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.21 linear_progression:edible_cactus
-execute if items entity @s container.22 minecraft:glistering_melon_slice unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_glistering_melon
-execute if items entity @s container.22 minecraft:sugar unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_sugar
-execute if items entity @s container.22 minecraft:nether_wart unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_nether_wart
-execute if items entity @s container.22 minecraft:golden_carrot unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_golden_carrot
-execute if items entity @s container.22 minecraft:cooked_rabbit unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.22 minecraft:dried_kelp unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_dried_kelp
-execute if items entity @s container.22 minecraft:cooked_cod unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_cooked_cod
-execute if items entity @s container.22 minecraft:cooked_salmon unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_cooked_salmon
-execute if items entity @s container.22 minecraft:cooked_porkchop unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.22 minecraft:cooked_beef unless items entity @s container.22 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.22 linear_progression:edible_cooked_beef
-execute if items entity @s container.22 minecraft:cactus unless items entity @s container.22 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.22 linear_progression:edible_cactus
-execute if items entity @s container.23 minecraft:glistering_melon_slice unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_glistering_melon
-execute if items entity @s container.23 minecraft:sugar unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_sugar
-execute if items entity @s container.23 minecraft:nether_wart unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_nether_wart
-execute if items entity @s container.23 minecraft:golden_carrot unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_golden_carrot
-execute if items entity @s container.23 minecraft:cooked_rabbit unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.23 minecraft:dried_kelp unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_dried_kelp
-execute if items entity @s container.23 minecraft:cooked_cod unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_cooked_cod
-execute if items entity @s container.23 minecraft:cooked_salmon unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_cooked_salmon
-execute if items entity @s container.23 minecraft:cooked_porkchop unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.23 minecraft:cooked_beef unless items entity @s container.23 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.23 linear_progression:edible_cooked_beef
-execute if items entity @s container.23 minecraft:cactus unless items entity @s container.23 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.23 linear_progression:edible_cactus
-execute if items entity @s container.24 minecraft:glistering_melon_slice unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_glistering_melon
-execute if items entity @s container.24 minecraft:sugar unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_sugar
-execute if items entity @s container.24 minecraft:nether_wart unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_nether_wart
-execute if items entity @s container.24 minecraft:golden_carrot unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_golden_carrot
-execute if items entity @s container.24 minecraft:cooked_rabbit unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.24 minecraft:dried_kelp unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_dried_kelp
-execute if items entity @s container.24 minecraft:cooked_cod unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_cooked_cod
-execute if items entity @s container.24 minecraft:cooked_salmon unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_cooked_salmon
-execute if items entity @s container.24 minecraft:cooked_porkchop unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.24 minecraft:cooked_beef unless items entity @s container.24 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.24 linear_progression:edible_cooked_beef
-execute if items entity @s container.24 minecraft:cactus unless items entity @s container.24 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.24 linear_progression:edible_cactus
-execute if items entity @s container.25 minecraft:glistering_melon_slice unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_glistering_melon
-execute if items entity @s container.25 minecraft:sugar unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_sugar
-execute if items entity @s container.25 minecraft:nether_wart unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_nether_wart
-execute if items entity @s container.25 minecraft:golden_carrot unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_golden_carrot
-execute if items entity @s container.25 minecraft:cooked_rabbit unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.25 minecraft:dried_kelp unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_dried_kelp
-execute if items entity @s container.25 minecraft:cooked_cod unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_cooked_cod
-execute if items entity @s container.25 minecraft:cooked_salmon unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_cooked_salmon
-execute if items entity @s container.25 minecraft:cooked_porkchop unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.25 minecraft:cooked_beef unless items entity @s container.25 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.25 linear_progression:edible_cooked_beef
-execute if items entity @s container.25 minecraft:cactus unless items entity @s container.25 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.25 linear_progression:edible_cactus
-execute if items entity @s container.26 minecraft:glistering_melon_slice unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_glistering_melon
-execute if items entity @s container.26 minecraft:sugar unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_sugar
-execute if items entity @s container.26 minecraft:nether_wart unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_nether_wart
-execute if items entity @s container.26 minecraft:golden_carrot unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_golden_carrot
-execute if items entity @s container.26 minecraft:cooked_rabbit unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.26 minecraft:dried_kelp unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_dried_kelp
-execute if items entity @s container.26 minecraft:cooked_cod unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_cooked_cod
-execute if items entity @s container.26 minecraft:cooked_salmon unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_cooked_salmon
-execute if items entity @s container.26 minecraft:cooked_porkchop unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.26 minecraft:cooked_beef unless items entity @s container.26 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.26 linear_progression:edible_cooked_beef
-execute if items entity @s container.26 minecraft:cactus unless items entity @s container.26 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.26 linear_progression:edible_cactus
-execute if items entity @s container.27 minecraft:glistering_melon_slice unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_glistering_melon
-execute if items entity @s container.27 minecraft:sugar unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_sugar
-execute if items entity @s container.27 minecraft:nether_wart unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_nether_wart
-execute if items entity @s container.27 minecraft:golden_carrot unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_golden_carrot
-execute if items entity @s container.27 minecraft:cooked_rabbit unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.27 minecraft:dried_kelp unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_dried_kelp
-execute if items entity @s container.27 minecraft:cooked_cod unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_cooked_cod
-execute if items entity @s container.27 minecraft:cooked_salmon unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_cooked_salmon
-execute if items entity @s container.27 minecraft:cooked_porkchop unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.27 minecraft:cooked_beef unless items entity @s container.27 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.27 linear_progression:edible_cooked_beef
-execute if items entity @s container.27 minecraft:cactus unless items entity @s container.27 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.27 linear_progression:edible_cactus
-execute if items entity @s container.28 minecraft:glistering_melon_slice unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_glistering_melon
-execute if items entity @s container.28 minecraft:sugar unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_sugar
-execute if items entity @s container.28 minecraft:nether_wart unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_nether_wart
-execute if items entity @s container.28 minecraft:golden_carrot unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_golden_carrot
-execute if items entity @s container.28 minecraft:cooked_rabbit unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.28 minecraft:dried_kelp unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_dried_kelp
-execute if items entity @s container.28 minecraft:cooked_cod unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_cooked_cod
-execute if items entity @s container.28 minecraft:cooked_salmon unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_cooked_salmon
-execute if items entity @s container.28 minecraft:cooked_porkchop unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.28 minecraft:cooked_beef unless items entity @s container.28 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.28 linear_progression:edible_cooked_beef
-execute if items entity @s container.28 minecraft:cactus unless items entity @s container.28 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.28 linear_progression:edible_cactus
-execute if items entity @s container.29 minecraft:glistering_melon_slice unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_glistering_melon
-execute if items entity @s container.29 minecraft:sugar unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_sugar
-execute if items entity @s container.29 minecraft:nether_wart unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_nether_wart
-execute if items entity @s container.29 minecraft:golden_carrot unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_golden_carrot
-execute if items entity @s container.29 minecraft:cooked_rabbit unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.29 minecraft:dried_kelp unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_dried_kelp
-execute if items entity @s container.29 minecraft:cooked_cod unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_cooked_cod
-execute if items entity @s container.29 minecraft:cooked_salmon unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_cooked_salmon
-execute if items entity @s container.29 minecraft:cooked_porkchop unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.29 minecraft:cooked_beef unless items entity @s container.29 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.29 linear_progression:edible_cooked_beef
-execute if items entity @s container.29 minecraft:cactus unless items entity @s container.29 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.29 linear_progression:edible_cactus
-execute if items entity @s container.30 minecraft:glistering_melon_slice unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_glistering_melon
-execute if items entity @s container.30 minecraft:sugar unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_sugar
-execute if items entity @s container.30 minecraft:nether_wart unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_nether_wart
-execute if items entity @s container.30 minecraft:golden_carrot unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_golden_carrot
-execute if items entity @s container.30 minecraft:cooked_rabbit unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.30 minecraft:dried_kelp unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_dried_kelp
-execute if items entity @s container.30 minecraft:cooked_cod unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_cooked_cod
-execute if items entity @s container.30 minecraft:cooked_salmon unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_cooked_salmon
-execute if items entity @s container.30 minecraft:cooked_porkchop unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.30 minecraft:cooked_beef unless items entity @s container.30 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.30 linear_progression:edible_cooked_beef
-execute if items entity @s container.30 minecraft:cactus unless items entity @s container.30 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.30 linear_progression:edible_cactus
-execute if items entity @s container.31 minecraft:glistering_melon_slice unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_glistering_melon
-execute if items entity @s container.31 minecraft:sugar unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_sugar
-execute if items entity @s container.31 minecraft:nether_wart unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_nether_wart
-execute if items entity @s container.31 minecraft:golden_carrot unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_golden_carrot
-execute if items entity @s container.31 minecraft:cooked_rabbit unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.31 minecraft:dried_kelp unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_dried_kelp
-execute if items entity @s container.31 minecraft:cooked_cod unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_cooked_cod
-execute if items entity @s container.31 minecraft:cooked_salmon unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_cooked_salmon
-execute if items entity @s container.31 minecraft:cooked_porkchop unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.31 minecraft:cooked_beef unless items entity @s container.31 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.31 linear_progression:edible_cooked_beef
-execute if items entity @s container.31 minecraft:cactus unless items entity @s container.31 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.31 linear_progression:edible_cactus
-execute if items entity @s container.32 minecraft:glistering_melon_slice unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_glistering_melon
-execute if items entity @s container.32 minecraft:sugar unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_sugar
-execute if items entity @s container.32 minecraft:nether_wart unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_nether_wart
-execute if items entity @s container.32 minecraft:golden_carrot unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_golden_carrot
-execute if items entity @s container.32 minecraft:cooked_rabbit unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.32 minecraft:dried_kelp unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_dried_kelp
-execute if items entity @s container.32 minecraft:cooked_cod unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_cooked_cod
-execute if items entity @s container.32 minecraft:cooked_salmon unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_cooked_salmon
-execute if items entity @s container.32 minecraft:cooked_porkchop unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.32 minecraft:cooked_beef unless items entity @s container.32 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.32 linear_progression:edible_cooked_beef
-execute if items entity @s container.32 minecraft:cactus unless items entity @s container.32 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.32 linear_progression:edible_cactus
-execute if items entity @s container.33 minecraft:glistering_melon_slice unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_glistering_melon
-execute if items entity @s container.33 minecraft:sugar unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_sugar
-execute if items entity @s container.33 minecraft:nether_wart unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_nether_wart
-execute if items entity @s container.33 minecraft:golden_carrot unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_golden_carrot
-execute if items entity @s container.33 minecraft:cooked_rabbit unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.33 minecraft:dried_kelp unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_dried_kelp
-execute if items entity @s container.33 minecraft:cooked_cod unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_cooked_cod
-execute if items entity @s container.33 minecraft:cooked_salmon unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_cooked_salmon
-execute if items entity @s container.33 minecraft:cooked_porkchop unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.33 minecraft:cooked_beef unless items entity @s container.33 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.33 linear_progression:edible_cooked_beef
-execute if items entity @s container.33 minecraft:cactus unless items entity @s container.33 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.33 linear_progression:edible_cactus
-execute if items entity @s container.34 minecraft:glistering_melon_slice unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_glistering_melon
-execute if items entity @s container.34 minecraft:sugar unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_sugar
-execute if items entity @s container.34 minecraft:nether_wart unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_nether_wart
-execute if items entity @s container.34 minecraft:golden_carrot unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_golden_carrot
-execute if items entity @s container.34 minecraft:cooked_rabbit unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.34 minecraft:dried_kelp unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_dried_kelp
-execute if items entity @s container.34 minecraft:cooked_cod unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_cooked_cod
-execute if items entity @s container.34 minecraft:cooked_salmon unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_cooked_salmon
-execute if items entity @s container.34 minecraft:cooked_porkchop unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.34 minecraft:cooked_beef unless items entity @s container.34 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.34 linear_progression:edible_cooked_beef
-execute if items entity @s container.34 minecraft:cactus unless items entity @s container.34 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.34 linear_progression:edible_cactus
-execute if items entity @s container.35 minecraft:glistering_melon_slice unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_glistering_melon
-execute if items entity @s container.35 minecraft:sugar unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_sugar
-execute if items entity @s container.35 minecraft:nether_wart unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_nether_wart
-execute if items entity @s container.35 minecraft:golden_carrot unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_golden_carrot
-execute if items entity @s container.35 minecraft:cooked_rabbit unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_cooked_rabbit
-execute if items entity @s container.35 minecraft:dried_kelp unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_dried_kelp
-execute if items entity @s container.35 minecraft:cooked_cod unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_cooked_cod
-execute if items entity @s container.35 minecraft:cooked_salmon unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_cooked_salmon
-execute if items entity @s container.35 minecraft:cooked_porkchop unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_cooked_porkchop
-execute if items entity @s container.35 minecraft:cooked_beef unless items entity @s container.35 *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s container.35 linear_progression:edible_cooked_beef
-execute if items entity @s container.35 minecraft:cactus unless items entity @s container.35 *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s container.35 linear_progression:edible_cactus
-execute if items entity @s weapon.offhand minecraft:glistering_melon_slice unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_glistering_melon
-execute if items entity @s weapon.offhand minecraft:sugar unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_sugar
-execute if items entity @s weapon.offhand minecraft:nether_wart unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_nether_wart
-execute if items entity @s weapon.offhand minecraft:golden_carrot unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_golden_carrot
-execute if items entity @s weapon.offhand minecraft:cooked_rabbit unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_cooked_rabbit
-execute if items entity @s weapon.offhand minecraft:dried_kelp unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_dried_kelp
-execute if items entity @s weapon.offhand minecraft:cooked_cod unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_cooked_cod
-execute if items entity @s weapon.offhand minecraft:cooked_salmon unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_cooked_salmon
-execute if items entity @s weapon.offhand minecraft:cooked_porkchop unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_cooked_porkchop
-execute if items entity @s weapon.offhand minecraft:cooked_beef unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s weapon.offhand linear_progression:edible_cooked_beef
-execute if items entity @s weapon.offhand minecraft:cactus unless items entity @s weapon.offhand *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s weapon.offhand linear_progression:edible_cactus
-execute if items entity @s player.cursor minecraft:glistering_melon_slice unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_glistering_melon
-execute if items entity @s player.cursor minecraft:sugar unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_sugar
-execute if items entity @s player.cursor minecraft:nether_wart unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_nether_wart
-execute if items entity @s player.cursor minecraft:golden_carrot unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_golden_carrot
-execute if items entity @s player.cursor minecraft:cooked_rabbit unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_cooked_rabbit
-execute if items entity @s player.cursor minecraft:dried_kelp unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_dried_kelp
-execute if items entity @s player.cursor minecraft:cooked_cod unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_cooked_cod
-execute if items entity @s player.cursor minecraft:cooked_salmon unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_cooked_salmon
-execute if items entity @s player.cursor minecraft:cooked_porkchop unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_cooked_porkchop
-execute if items entity @s player.cursor minecraft:cooked_beef unless items entity @s player.cursor *[minecraft:custom_data~{lp_edible:1b}] run item modify entity @s player.cursor linear_progression:edible_cooked_beef
-execute if items entity @s player.cursor minecraft:cactus unless items entity @s player.cursor *[minecraft:custom_data~{lp_cactus_food:2b}] run item modify entity @s player.cursor linear_progression:edible_cactus
+data modify storage linear_progression:stamp_args item set value "minecraft:glistering_melon_slice"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_glistering_melon"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:sugar"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_sugar"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:nether_wart"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_nether_wart"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:golden_carrot"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_golden_carrot"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:cooked_rabbit"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_cooked_rabbit"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:dried_kelp"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_dried_kelp"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:cooked_cod"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_cooked_cod"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:cooked_salmon"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_cooked_salmon"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:cooked_porkchop"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_cooked_porkchop"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:cooked_beef"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_cooked_beef"
+data modify storage linear_progression:stamp_args marker set value "{lp_edible:1b}"
+function linear_progression:global_systems/stamp/carry
+
+data modify storage linear_progression:stamp_args item set value "minecraft:cactus"
+data modify storage linear_progression:stamp_args modifier set value "linear_progression:edible_cactus"
+data modify storage linear_progression:stamp_args marker set value "{lp_cactus_food:2b}"
+function linear_progression:global_systems/stamp/carry

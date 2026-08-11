@@ -42,4 +42,4 @@ execute if score @s equip_piece matches 2 run data modify storage linear_progres
 execute if score @s equip_piece matches 2 run function linear_progression:difficulty_boost/trim/apply with storage linear_progression:trim
 
 # Item-component knockback resistance (tooltip + netherite-armor strength)
-function linear_progression:armor_effects/stamp_gold_kb_armor
+function linear_progression:global_systems/stamp/gold_worn

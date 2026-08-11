@@ -1,0 +1,81 @@
+Linear Progression — Changelog
+==============================
+Pack: linear_progression (Minecraft 1.21.11, pack_format 94.1)
+Generated: 2026-08-11
+
+
+## 2026-08-11 — Stamp refactor, Sugar Rush, cleanup
+
+### Performance / systems
+- Unified inventory stamp helpers (`global_systems/stamp/`):
+  - Shared one-slot stamp macro, carry-slot scanner, worn-only gold/chainmail paths
+  - Early-out when no relevant items are in inventory
+  - Split worn equip stamps vs carry (bag/hotbar) stamps
+- Rewrote gold armor, chainmail speed, turtle helmet, and edible food stamping on top of the helper (large line-count reduction)
+- Fixed edible (and GS gold/chainmail) stamps failing to load after an invalid `execute unless function … with storage` early-out
+
+### Gold armor
+- Unequip path now only clears equip tags (speed/KB live on item attribute_modifiers)
+- Removed legacy entity attribute remove spam and dead `stamp_gold_kb_armor` path
+
+### Dead code removed
+- `apply_netherite_effects` redirect
+- No-op `trim_effects/netherite/fire_resistance`
+- Obsolete gold stamp helper superseded by `stamp/gold_worn`
+
+### Advancements
+- **Sugar Rush** (hidden, parent root): eat sugar — “Gotta go fast!”
+
+### Recipes
+- Vanilla-style map craft: 8 paper + feather → map
+
+
+## 2026-08-10 — Armor perks & keepInventory curse fixes (20fde21)
+
+### Turtle shell
+- Infinite water breathing while worn (finite potion WB saved on equip, restored on unequip)
+- Item stamp: water movement efficiency 0.3
+- While wet: movement speed +50%
+
+### Chainmail
+- Passive sat drip by piece count (15s / 10s / 4.5s / 1s for 1–4 pieces)
+- Movement speed +5% per piece (item stamp; half of gold’s 10%)
+
+### Netherite fire resistance
+- Infinite FR when netherite armor pieces + netherite trims ≥ 4
+- Finite potion FR preserved across equip/unequip (turtle-style)
+- Hidden particles on armor-granted FR
+
+### Death / keepInventory curses
+- On death: strip Curse of Binding from armor slots only
+- On death: delete any item with Curse of Vanishing (full inventory)
+- Re-runs once the player is alive again if death-time item ops fail
+
+
+## Earlier highlights (selected)
+
+### 9e50e52 — Story advancements, gold-trim mining, master surface cull
+- Story advancement set expansions
+- Gold trim mining speed balance (stronger with gold tools)
+- Master mode surface cull for common hostiles (sky / high Y)
+
+### 24329f9 — Edibles, mob stats, arrows, Makeshift Cannon
+- Pack edible overrides (sugar, wart, cooked foods, cactus, etc.)
+- Mob HP/speed tuning; skeleton/amethyst/dispenser arrow boosts
+- Makeshift Cannon advancement / related content
+
+### 7e14367 — Powerful Trims, respawn, difficulty armor, gold item buffs
+- Modular armor-trim effects
+- Overworld better-respawn near death
+- Difficulty-scaled mob armor equip
+- Gold armor KB + speed as item components
+
+### 7e6db18 — Suspicious food
+- Flower + food (and honey) craft system with effect infusions
+
+
+## Notes for testers
+- After updating the pack: `/reload` in-game
+- Edible items stamp on inventory change (open inv / pick up / craft)
+- Sugar must be stamped edible before it can be eaten for Sugar Rush
+- keepInventory remains forced on load; Binding/Vanishing death rules depend on that
